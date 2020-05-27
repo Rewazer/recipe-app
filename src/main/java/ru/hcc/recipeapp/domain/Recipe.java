@@ -1,6 +1,11 @@
 package ru.hcc.recipeapp.domain;
 
 import javax.persistence.*;
+import java.util.Set;
+
+/*
+ * Created by SS on 28/05/2020.
+ */
 
 @Entity
 public class Recipe {
@@ -25,6 +30,9 @@ public class Recipe {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingridient> ingridients;
 
     public Long getId() {
         return id;

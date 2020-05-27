@@ -2,6 +2,10 @@ package ru.hcc.recipeapp.domain;
 
 import javax.persistence.*;
 
+/*
+ * Created by SS on 28/05/2020.
+ */
+
 @Entity
 public class Notes {
 
