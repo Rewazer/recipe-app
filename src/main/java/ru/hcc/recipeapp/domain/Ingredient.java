@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  */
 
 @Entity
-public class Ingridient {
+public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,14 +16,13 @@ public class Ingridient {
     private String description;
     private BigDecimal amount;
 
-    public Ingridient() {
+    public Ingredient() {
     }
 
-    public Ingridient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
         this.description = description;
         this.amount = amount;
         this.uom = uom;
-        this.recipe = recipe;
     }
 
     @OneToOne(fetch = FetchType.EAGER)
