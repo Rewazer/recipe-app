@@ -16,6 +16,16 @@ public class Ingridient {
     private String description;
     private BigDecimal amount;
 
+    public Ingridient() {
+    }
+
+    public Ingridient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
+        this.description = description;
+        this.amount = amount;
+        this.uom = uom;
+        this.recipe = recipe;
+    }
+
     @OneToOne(fetch = FetchType.EAGER)
     private UnitOfMeasure uom;
 

@@ -1,6 +1,7 @@
 package ru.hcc.recipeapp.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /*
@@ -14,8 +15,16 @@ public class Category {
 
     private String description;
 
+    public Category() {
+    }
+
+    public Category(String description, Set<Recipe> recipes) {
+        this.description = description;
+        this.recipes = recipes;
+    }
+
     @ManyToMany(mappedBy = "categories")
-    private Set<Recipe> recipes;
+    private Set<Recipe> recipes = new HashSet<>();
 
     public Long getId() {
         return id;
