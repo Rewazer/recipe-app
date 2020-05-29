@@ -9,6 +9,7 @@ import ru.hcc.recipeapp.repos.CategoryRepository;
 import ru.hcc.recipeapp.repos.RecipeRepository;
 import ru.hcc.recipeapp.repos.UnitOfMeasureRepository;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -179,8 +180,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         return recipes;
     }
 
-
     @Override
+    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         recipeRepository.saveAll(getRecipes());
     }
