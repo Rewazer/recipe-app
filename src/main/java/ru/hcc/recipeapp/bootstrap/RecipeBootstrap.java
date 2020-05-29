@@ -1,5 +1,6 @@
 package ru.hcc.recipeapp.bootstrap;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -17,14 +18,15 @@ import java.util.Optional;
 /*
  * Created by SS on 28/05/2020.
  */
+@Slf4j
 @Component
-public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
+public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
     private RecipeRepository recipeRepository;
     private UnitOfMeasureRepository unitOfMeasureRepository;
     private CategoryRepository categoryRepository;
     List<Recipe> recipes = new ArrayList<>();
 
-    public DataLoader(RecipeRepository recipeRepository, UnitOfMeasureRepository unitOfMeasureRepository, CategoryRepository categoryRepository) {
+    public RecipeBootstrap(RecipeRepository recipeRepository, UnitOfMeasureRepository unitOfMeasureRepository, CategoryRepository categoryRepository) {
         this.recipeRepository = recipeRepository;
         this.unitOfMeasureRepository = unitOfMeasureRepository;
         this.categoryRepository = categoryRepository;
