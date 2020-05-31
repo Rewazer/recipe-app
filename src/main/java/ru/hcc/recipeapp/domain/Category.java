@@ -23,12 +23,4 @@ public class Category {
     private Set<Recipe> recipes = new HashSet<>();
 
     private String description;
-
-    public Category() {
-    }
-
-    public Category(String description, Set<Recipe> recipes) {
-        this.description = description;
-        this.recipes = recipes;
-    }
 }
