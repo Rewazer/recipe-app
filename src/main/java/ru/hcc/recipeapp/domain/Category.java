@@ -10,17 +10,17 @@ import java.util.Set;
 /*
  * Created by SS on 28/05/2020.
  */
-
 @Data
 @EqualsAndHashCode(exclude = {"recipes"})
 @Entity
 public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String description;
 
     @ManyToMany(mappedBy = "categories")
     private Set<Recipe> recipes = new HashSet<>();
 
-    private String description;
 }
