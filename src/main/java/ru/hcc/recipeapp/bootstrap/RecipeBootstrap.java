@@ -36,8 +36,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     public List<Recipe> getRecipes() {
         List<Recipe> recipes = new ArrayList<>();
 
-        Optional<UnitOfMeasure> teaspoonUomOptional = unitOfMeasureRepository.findByDescription("TeaSpoon");
-        Optional<UnitOfMeasure> tablespoonUomOptional = unitOfMeasureRepository.findByDescription("TableSpoon");
+        Optional<UnitOfMeasure> teaspoonUomOptional = unitOfMeasureRepository.findByDescription("Teaspoon");
+        Optional<UnitOfMeasure> tablespoonUomOptional = unitOfMeasureRepository.findByDescription("Tablespoon");
         Optional<UnitOfMeasure> cupUomOptional = unitOfMeasureRepository.findByDescription("Cup");
         Optional<UnitOfMeasure> pinchUomOptional = unitOfMeasureRepository.findByDescription("Pinch");
         Optional<UnitOfMeasure> ounceUomOptional = unitOfMeasureRepository.findByDescription("Ounce");
