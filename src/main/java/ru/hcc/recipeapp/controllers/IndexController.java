@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.hcc.recipeapp.services.RecipeService;
 
-/*
+/**
  * Created by SS on 28/05/2020.
  */
 @Slf4j

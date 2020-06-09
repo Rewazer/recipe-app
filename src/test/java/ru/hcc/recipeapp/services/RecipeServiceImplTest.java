@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import ru.hcc.recipeapp.converters.RecipeCommandToRecipe;
+import ru.hcc.recipeapp.converters.RecipeToRecipeCommand;
 import ru.hcc.recipeapp.domain.Recipe;
 import ru.hcc.recipeapp.repos.RecipeRepository;
 
@@ -19,15 +21,23 @@ import static org.mockito.Mockito.*;
  * Created by SS on 31/05/2020.
  */
 class RecipeServiceImplTest {
+
     RecipeServiceImpl recipeService;
 
     @Mock
     RecipeRepository recipeRepository;
 
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
+
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+
     @BeforeEach
-    void setUp() {
+    public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        recipeService = new RecipeServiceImpl(recipeRepository);
+
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Test
@@ -46,16 +56,18 @@ class RecipeServiceImplTest {
     }
 
     @Test
-    void getRecipes() {
+    public void getRecipesTest() throws Exception {
+
         Recipe recipe = new Recipe();
-        HashSet recipesData = new HashSet();
-        recipesData.add(recipe);
-        when(recipeRepository.findAll())
-                .thenReturn(recipesData);
+        HashSet receipesData = new HashSet();
+        receipesData.add(recipe);
+
+        when(recipeService.getRecipes()).thenReturn(receipesData);
 
         Set<Recipe> recipes = recipeService.getRecipes();
 
         assertEquals(recipes.size(), 1);
         verify(recipeRepository, times(1)).findAll();
+        verify(recipeRepository, never()).findById(anyLong());
     }
 }
