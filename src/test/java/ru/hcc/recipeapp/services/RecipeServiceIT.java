@@ -15,13 +15,10 @@ import ru.hcc.recipeapp.repos.RecipeRepository;
 import static org.junit.Assert.assertEquals;
 
 
-/*
+/**
  * Created by SS on 11/06/2020.
  */
 
-/**
- * Created by jt on 6/21/17.
- */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class RecipeServiceIT {

@@ -1,14 +1,14 @@
 package ru.hcc.recipeapp.converters;
 
-/*
- * Created by SS on 10/06/2020.
- */
-
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 import ru.hcc.recipeapp.commands.IngredientCommand;
 import ru.hcc.recipeapp.domain.Ingredient;
+
+/**
+ * Created by SS on 10/06/2020.
+ */
 
 @Component
 public class IngredientCommandToIngredient implements Converter<IngredientCommand, Ingredient> {
@@ -30,7 +30,7 @@ public class IngredientCommandToIngredient implements Converter<IngredientComman
         ingredient.setId(source.getId());
         ingredient.setAmount(source.getAmount());
         ingredient.setDescription(source.getDescription());
-        ingredient.setUom(uomConverter.convert(source.getUnitOfMeasure()));
+        ingredient.setUom(uomConverter.convert(source.getUom()));
         return ingredient;
     }
 }

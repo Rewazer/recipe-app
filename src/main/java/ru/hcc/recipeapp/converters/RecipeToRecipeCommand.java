@@ -1,9 +1,5 @@
 package ru.hcc.recipeapp.converters;
 
-/*
- * Created by SS on 10/06/2020.
- */
-
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
@@ -12,16 +8,21 @@ import ru.hcc.recipeapp.commands.RecipeCommand;
 import ru.hcc.recipeapp.domain.Category;
 import ru.hcc.recipeapp.domain.Recipe;
 
+
+/**
+ * Created by SS on 10/06/2020.
+ */
+
 @Component
 public class RecipeToRecipeCommand implements Converter<Recipe, RecipeCommand> {
 
-    private final CategoryToCategoryCommand categoryConveter;
+    private final CategoryToCategoryCommand categoryConverter;
     private final IngredientToIngredientCommand ingredientConverter;
     private final NotesToNotesCommand notesConverter;
 
-    public RecipeToRecipeCommand(CategoryToCategoryCommand categoryConveter, IngredientToIngredientCommand ingredientConverter,
+    public RecipeToRecipeCommand(CategoryToCategoryCommand categoryConverter, IngredientToIngredientCommand ingredientConverter,
                                  NotesToNotesCommand notesConverter) {
-        this.categoryConveter = categoryConveter;
+        this.categoryConverter = categoryConverter;
         this.ingredientConverter = ingredientConverter;
         this.notesConverter = notesConverter;
     }
@@ -48,7 +49,7 @@ public class RecipeToRecipeCommand implements Converter<Recipe, RecipeCommand> {
 
         if (source.getCategories() != null && source.getCategories().size() > 0) {
             source.getCategories()
-                    .forEach((Category category) -> command.getCategories().add(categoryConveter.convert(category)));
+                    .forEach((Category category) -> command.getCategories().add(categoryConverter.convert(category)));
         }
 
         if (source.getIngredients() != null && source.getIngredients().size() > 0) {

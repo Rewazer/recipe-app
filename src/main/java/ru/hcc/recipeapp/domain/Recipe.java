@@ -6,9 +6,10 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
+/**
  * Created by SS on 28/05/2020.
  */
+
 @Data
 @Entity
 public class Recipe {

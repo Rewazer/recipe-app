@@ -13,9 +13,10 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/*
+/**
  * Created by SS on 31/05/2020.
  */
+
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
 class UnitOfMeasureRepositoryTest {

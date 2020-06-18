@@ -7,9 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/*
+/**
  * Created by SS on 28/05/2020.
  */
+
 @Data
 @Entity
 public class UnitOfMeasure {

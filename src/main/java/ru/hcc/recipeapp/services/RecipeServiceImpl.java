@@ -13,9 +13,10 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-/*
+/**
  * Created by SS on 28/05/2020.
  */
+
 @Slf4j
 @Service
 public class RecipeServiceImpl implements RecipeService {
@@ -32,18 +33,28 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Set<Recipe> getRecipes() {
-        log.debug("Recipe service Implementation");
-        Set<Recipe> recipes = new HashSet<>();
-        recipeRepository.findAll().iterator().forEachRemaining(recipes::add);
-        return recipes;
+        log.debug("I'm in the service");
+
+        Set<Recipe> recipeSet = new HashSet<>();
+        recipeRepository.findAll().iterator().forEachRemaining(recipeSet::add);
+        return recipeSet;
     }
 
     @Override
     public Recipe findById(Long l) {
         Optional<Recipe> recipeOptional = recipeRepository.findById(l);
-        if (!recipeOptional.isPresent())
-            throw new RuntimeException("Recipe not found");
+        if (!recipeOptional.isPresent()) {
+            throw new RuntimeException("Recipe Not Found!");
+
+        }
+
         return recipeOptional.get();
+    }
+
+    @Override
+    @Transactional
+    public RecipeCommand findCommandById(Long l) {
+        return recipeToRecipeCommand.convert(findById(l));
     }
 
     @Override

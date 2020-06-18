@@ -6,9 +6,10 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import java.util.Set;
 
-/*
+/**
  * Created by SS on 28/05/2020.
  */
+
 @Data
 @EqualsAndHashCode(exclude = {"recipes"})
 @Entity

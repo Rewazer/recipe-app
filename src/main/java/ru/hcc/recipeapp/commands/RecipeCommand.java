@@ -1,9 +1,5 @@
 package ru.hcc.recipeapp.commands;
 
-/*
- * Created by SS on 10/06/2020.
- */
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +7,10 @@ import ru.hcc.recipeapp.domain.Difficulty;
 
 import java.util.HashSet;
 import java.util.Set;
+
+/**
+ * Created by SS on 10/06/2020.
+ */
 
 @Getter
 @Setter

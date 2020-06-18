@@ -6,9 +6,10 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-/*
+/**
  * Created by SS on 28/05/2020.
  */
+
 @Data
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
