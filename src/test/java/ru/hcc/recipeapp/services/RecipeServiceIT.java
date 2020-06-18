@@ -12,7 +12,7 @@ import ru.hcc.recipeapp.converters.RecipeToRecipeCommand;
 import ru.hcc.recipeapp.domain.Recipe;
 import ru.hcc.recipeapp.repos.RecipeRepository;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /**

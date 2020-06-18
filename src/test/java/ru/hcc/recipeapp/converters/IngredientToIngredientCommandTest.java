@@ -9,9 +9,7 @@ import ru.hcc.recipeapp.domain.UnitOfMeasure;
 
 import java.math.BigDecimal;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by SS on 10/06/2020.

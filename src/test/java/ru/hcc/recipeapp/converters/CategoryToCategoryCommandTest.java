@@ -5,9 +5,8 @@ import org.junit.jupiter.api.Test;
 import ru.hcc.recipeapp.commands.CategoryCommand;
 import ru.hcc.recipeapp.domain.Category;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 /**
  * Created by SS on 10/06/2020.
