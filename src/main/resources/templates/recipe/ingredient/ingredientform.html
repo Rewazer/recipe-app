@@ -46,7 +46,6 @@
                                 <div class="col-md-3 form-group">
                                     <label>UOM:</label>
                                     <select class="form-control" name="uom.id">
-                                        <!--/*@thymesVar id="uomEach" type=""*/-->
                                         <option th:each="uomEach : ${uomList}"
                                                 th:value="${uomEach.id}"
                                                 th:selected="${uomEach.id.equals(ingredient.uom.id)}"

@@ -1,7 +1,8 @@
 package ru.hcc.recipeapp.domain;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -9,7 +10,8 @@ import javax.persistence.*;
  * Created by SS on 28/05/2020.
  */
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Notes {
