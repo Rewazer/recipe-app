@@ -1,9 +1,5 @@
 package ru.hcc.recipeapp.services;
 
-/*
- * Created by SS on 21/06/2020.
- */
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +12,10 @@ import ru.hcc.recipeapp.repos.RecipeRepository;
 import ru.hcc.recipeapp.repos.UnitOfMeasureRepository;
 
 import java.util.Optional;
+
+/**
+ * Created by SS on 21/06/2020.
+ */
 
 @Slf4j
 @Service
